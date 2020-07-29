@@ -1036,6 +1036,19 @@
     "xp_vice": "You struggled with issues from your vice or traumas during the session.",
     "zerodice": "Zero Dice — take the lowest result above",
 
+    "assess": "Assess",
+    "hack": "Hack",
+    "repair": "Repair",
+    "research": "Research",
+    "maneuver": "Maneuver",
+    "melee": "Melee",
+    "shoot": "Shoot",
+    "sneak": "Sneak",
+    "focus": "Focus",
+    "intimidate": "Intimidate",
+    "charm": "Charm",
+    "compel": "Compel",
+
     "list_playbooks": "Soldier, Infiltrator, Scientist, Engineer.",
     "playbook_ability_ambusher": "Ambusher",
     "playbook_ability_ambusher_description": "When you attack from hiding or spring a trap, you get +1d.",
@@ -1094,7 +1107,7 @@
     "playbook_engineer_xp_condition": "You addressed a challenge with <strong>technical skill</strong> or <strong>ingenuity</strong>.",
     "playbook_scientist_description": "A thinker\nof things!",
     "playbook_scientist_xp_condition": "You addressed a challenge with <strong>knowledge</strong> or <strong>calculation</strong>.",
-    "playbook_soldier_description": "A dangerous &\nintimidating warrior",
+    "playbook_soldier_description": "A dangerous &\nintimidating\nwarrior",
     "playbook_soldier_xp_condition": "You addressed a challenge with <strong>force</strong> or <strong>threats</strong>.",
 
     "engineer": "Engineer",

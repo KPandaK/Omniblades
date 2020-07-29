@@ -32,7 +32,7 @@
 				.text
 					span.label.title(data-i18n='vice_purveyor')
 					span.uppercase.info(data-i18n='vice_info')
-				+roll('Vice', '{{{{subtitle=^{viceroll1}@{stress}&nbsp;@{setting_stress_label}^{viceroll2}}} {{vice=1}} {{title=^{vice}}} @{vice_formula}')(data-i18n='reduce_stress').vicebutton.borderbutton
+				+roll('Stress', '{{{{subtitle=^{viceroll1}@{stress}&nbsp;@{setting_stress_label}^{viceroll2}}} {{vice=1}} {{title=^{vice}}} @{vice_formula}')(data-i18n='reduce_stress').vicebutton.borderbutton
 				+hidden-input('vice_formula')(value=zerodiceFormula)
 		// Stress and Trauma
 		.col100.flex.stress.def-margin

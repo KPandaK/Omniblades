@@ -1,9 +1,10 @@
 /* global data, getTranslationByKey, getAttrs, setAttrs, on, getSectionIDs, generateRowID, removeRepeatingRow */
-const sheetVersion = "1.0";
+const sheetVersion = "0.1";
 const sheetName = "Omniblades in the Dark";
 const getTranslation = (key) => (getTranslationByKey(key) || "NO_TRANSLATION_FOUND");
 /* It's necessary to include the base data at the start of the file */
-/* Translate all the data */
+
+// Skip crew setup for now
 // Object.keys(data.crew).forEach(crew => {
 // 	const base = data.crew[crew].base;
 // 	Object.keys(base).forEach(attr => {
@@ -27,25 +28,25 @@ const getTranslation = (key) => (getTranslationByKey(key) || "NO_TRANSLATION_FOU
 // 		upgrade.boxes_chosen = "1";
 // 	});
 // });
-console.log("items");
+
 data.items.forEach(item => {
 	item.boxes_chosen = "1";
 	item.name = getTranslation(item.name);
 	item.description = getTranslationByKey(item.description) || "";
 });
-console.log("translations");
+
 Object.keys(data.translatedDefaults).forEach(k => {
 	data.translatedDefaults[k] = getTranslation(data.translatedDefaults[k]);
 });
-console.log("default values")
+
 Object.assign(data.defaultValues, data.translatedDefaults);
-console.log("factions")
+
 Object.keys(data.factions).forEach(x => {
 	data.factions[x].forEach(faction => {
 		faction.name = getTranslation(faction.name);
 	});
 });
-console.log("alchemical")
+
 data.alchemicals.forEach((v, k) => {
 	data.alchemicals[k] = {
 		name: getTranslation(v)

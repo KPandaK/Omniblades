@@ -862,7 +862,7 @@
 		}]
 	},
 	"actions": {
-		"insight": ["heal", "hack", "repair", "research"],
+		"insight": ["assess", "hack", "repair", "research"],
 		"prowess": ["maneuver", "melee", "shoot", "sneak"],
 		"resolve": ["focus", "intimidate", "charm", "compel"]
 	},

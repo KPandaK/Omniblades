@@ -87,7 +87,6 @@ Object.keys(data.playbook).forEach(playbook => {
 	// });
 });
 
-console.log("ability map")
 const playbookAbilityMap = new Map([...Object.values(data.playbook).map(x => x.ability).reduce((m, v) => {
 	v.forEach(a => m.add(a));
 	return m;
@@ -95,12 +94,14 @@ const playbookAbilityMap = new Map([...Object.values(data.playbook).map(x => x.a
 	return [x.name.toLowerCase(), x.description];
 }));
 
-const crewAbilityMap = new Map([...Object.values(data.crew).map(x => x.crewability).reduce((m, v) => {
-	v.forEach(a => m.add(a));
-	return m;
-}, new Set())].map(x => {
-	return [x.name.toLowerCase(), x.description];
-}));
+// No crew abilities for now
+// const crewAbilityMap = new Map([...Object.values(data.crew).map(x => x.crewability).reduce((m, v) => {
+// 	v.forEach(a => m.add(a));
+// 	return m;
+// }, new Set())].map(x => {
+// 	return [x.name.toLowerCase(), x.description];
+// }));
+
 /* Utility functions - shouldn't need to touch most of these */
 const mySetAttrs = (attrs, options, callback) => {
 		const finalAttrs = Object.keys(attrs).reduce((m, k) => {

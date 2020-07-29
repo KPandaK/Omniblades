@@ -408,7 +408,7 @@
 	},
 	"playbook": {
 		"soldier": {
-			"ability": ["battleborn", "commando", "covering_fire", "backup", "tough", "savage", "veteran"],
+			"ability": ["battleborn", "commando", "coveringfire", "backup", "tough", "savage", "veteran"],
 			"base": {
 				"maneuver": "1",
 				"shoot": "2",
@@ -1035,7 +1035,7 @@
 		"upgrade_6_check_1": "0",
 		"wreck": "0"
 	},
-	"maxFriendsPerPlaybook": 5,
+	"maxFriendsPerPlaybook": 0,
 	"maxContactsPerCrew": 6,
 	"friendlessPlaybooks": ["ghost", "hull"],
 	"translatedCrewAttributes": ["claim_1_name", "claim_2_name", "claim_3_name", "claim_4_name", "claim_5_name", "claim_6_name", "claim_7_name", "claim_8_name", "claim_9_name", "claim_10_name", "claim_11_name", "claim_12_name", "claim_13_name", "claim_14_name", "claim_15_name", "claim_1_desc", "claim_2_desc", "claim_3_desc", "claim_4_desc", "claim_5_desc", "claim_6_desc", "claim_7_desc", "claim_8_desc", "claim_9_desc", "claim_10_desc", "claim_11_desc", "claim_12_desc", "claim_13_desc", "claim_14_desc", "claim_15_desc", "cohort1_description", "cohort1_name", "cohort1_subtype", "crew_description", "crew_xp_condition", "hunting_grounds_type", "hunting_grounds_description", "upgrade_6_name", "upgrade_8_name"],

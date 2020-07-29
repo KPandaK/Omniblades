@@ -22,7 +22,8 @@ $redtext: #c43c35;
 	cursor: default;
 	box-sizing: border-box;
 	padding: 0 !important;
-	font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+	//font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+	font-family: 'Oswald', sans-serif;
 
 	div, span, textarea, ul, li, span, label {
 		box-sizing: border-box;
@@ -632,8 +633,8 @@ textarea.sheet-smallcaps {
 .sheet-omnibladeslogo {
 	border-right: 12px solid transparent;
 	height: 43px;
-	background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/logo.png');
-	background-size: 102% auto;
+	background-image: url('https://raw.githubusercontent.com/KPandaK/Omniblades/master/Assets/logo.png');
+	background-size: 100% auto;
 	background-repeat: no-repeat;
 }
 .sheet-crewheader {

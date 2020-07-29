@@ -4,39 +4,35 @@
 	.col55.flex-wrap
 		// Logo, Header text fields
 		.col100.header.flex
-			.col55.bladeslogo
-			label.col45.header
-				+text-input('crew')
-				.label.text.title(data-i18n='crew')
+			.col100.omnibladeslogo
 			label.col55
 				+text-input('name')
 				.label.text.title(data-i18n='name')
 			label.col45
-				+text-input('alias')
-				.label.text.title(data-i18n='alias')
+				+text-input('ship')
+				.label.text.title(data-i18n='ship')
 			label.col100
 				+text-input('look')
 				.label.text.title(data-i18n='look')
 			label.col55
-				+autoexpand('heritage')
-				+hidden-input('heritage')(value='')
-				.text
-					span.label.title(data-i18n='heritage')
-					span.uppercase.info(data-i18n='heritage_info')
-			label.col45
 				+autoexpand('background')
 				+hidden-input('background')(value='')
 				.text
 					span.label.title(data-i18n='background')
 					span.uppercase.info(data-i18n='background_info')
-			+hidden-input('setting_vice_type')(value='normal').vice-input
+			label.col45
+				+autoexpand('personality')
+				+hidden-input('personality')(value='')
+				.text
+					span.label.title(data-i18n='personality')
+					span.uppercase.info(data-i18n='personality_info')
 			label.col100.vice.normal
 				+autoexpand('vice_purveyor')
 				+hidden-input('vice_purveyor')(value='')
 				.text
 					span.label.title(data-i18n='vice_purveyor')
 					span.uppercase.info(data-i18n='vice_info')
-				+roll('Vice', '{{{{subtitle=^{viceroll1}@{stress}&nbsp;@{setting_stress_label}^{viceroll2}}} {{vice=1}} {{title=^{vice}}} @{vice_formula}')(data-i18n='indulge_vice').vicebutton.borderbutton
+				+roll('Vice', '{{{{subtitle=^{viceroll1}@{stress}&nbsp;@{setting_stress_label}^{viceroll2}}} {{vice=1}} {{title=^{vice}}} @{vice_formula}')(data-i18n='reduce_stress').vicebutton.borderbutton
 				+hidden-input('vice_formula')(value=zerodiceFormula)
 		// Stress and Trauma
 		.col100.flex.stress.def-margin

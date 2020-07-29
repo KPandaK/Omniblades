@@ -4,48 +4,55 @@ const sheetName = "Omniblades in the Dark";
 const getTranslation = (key) => (getTranslationByKey(key) || "NO_TRANSLATION_FOUND");
 /* It's necessary to include the base data at the start of the file */
 /* Translate all the data */
-Object.keys(data.crew).forEach(crew => {
-	const base = data.crew[crew].base;
-	Object.keys(base).forEach(attr => {
-		if (data.translatedCrewAttributes.includes(attr)) {
-			base[attr] = getTranslation(base[attr]);
-		}
-	});
-	/* Generate crew contacts from translation file */
-	data.crew[crew].contact = [...Array(data.maxContactsPerCrew).keys()].map(i => ({
-		name: getTranslation(`crew_${crew}_contact_${i}`)
-	}));
-	data.crew[crew].crewability = data.crew[crew].crewability.map(name => ({
-		name: getTranslation(`crew_ability_${name}`),
-		description: getTranslation(`crew_ability_${name}_description`)
-	}));
-	data.crew[crew].upgrade.forEach(upgrade => {
-		upgrade.name = getTranslation(upgrade.name);
-		if (upgrade.description) {
-			upgrade.description = getTranslationByKey(upgrade.description) || "";
-		}
-		upgrade.boxes_chosen = "1";
-	});
-});
+// Object.keys(data.crew).forEach(crew => {
+// 	const base = data.crew[crew].base;
+// 	Object.keys(base).forEach(attr => {
+// 		if (data.translatedCrewAttributes.includes(attr)) {
+// 			base[attr] = getTranslation(base[attr]);
+// 		}
+// 	});
+// 	/* Generate crew contacts from translation file */
+// 	data.crew[crew].contact = [...Array(data.maxContactsPerCrew).keys()].map(i => ({
+// 		name: getTranslation(`crew_${crew}_contact_${i}`)
+// 	}));
+// 	data.crew[crew].crewability = data.crew[crew].crewability.map(name => ({
+// 		name: getTranslation(`crew_ability_${name}`),
+// 		description: getTranslation(`crew_ability_${name}_description`)
+// 	}));
+// 	data.crew[crew].upgrade.forEach(upgrade => {
+// 		upgrade.name = getTranslation(upgrade.name);
+// 		if (upgrade.description) {
+// 			upgrade.description = getTranslationByKey(upgrade.description) || "";
+// 		}
+// 		upgrade.boxes_chosen = "1";
+// 	});
+// });
+console.log("items");
 data.items.forEach(item => {
 	item.boxes_chosen = "1";
 	item.name = getTranslation(item.name);
 	item.description = getTranslationByKey(item.description) || "";
 });
+console.log("translations");
 Object.keys(data.translatedDefaults).forEach(k => {
 	data.translatedDefaults[k] = getTranslation(data.translatedDefaults[k]);
 });
+console.log("default values")
 Object.assign(data.defaultValues, data.translatedDefaults);
+console.log("factions")
 Object.keys(data.factions).forEach(x => {
 	data.factions[x].forEach(faction => {
 		faction.name = getTranslation(faction.name);
 	});
 });
+console.log("alchemical")
 data.alchemicals.forEach((v, k) => {
 	data.alchemicals[k] = {
 		name: getTranslation(v)
 	};
 });
+
+// Initialize playbook data
 Object.keys(data.playbook).forEach(playbook => {
 	const base = data.playbook[playbook].base;
 	Object.keys(base).forEach(attr => {
@@ -53,7 +60,8 @@ Object.keys(data.playbook).forEach(playbook => {
 			base[attr] = getTranslation(base[attr]);
 		}
 	});
-	/* Generate playbook friends from translation file */
+	
+	// Generate playbook friends from translation file
 	if (!data.friendlessPlaybooks.includes(playbook)) {
 		data.playbook[playbook].friend = [...Array(data.maxFriendsPerPlaybook).keys()]
 			.map(i => ({
@@ -62,24 +70,31 @@ Object.keys(data.playbook).forEach(playbook => {
 			.filter(o => o.name);
 	}
 	else data.playbook[playbook].friend = [];
+
+	// Translate playbook abilities
 	data.playbook[playbook].ability = data.playbook[playbook].ability.map(name => ({
 		name: getTranslation(`playbook_ability_${name}`),
 		description: getTranslation(`playbook_ability_${name}_description`)
 	}));
-	data.playbook[playbook].playbookitem.forEach(item => {
-		item.name = getTranslation(item.name);
-		if (item.description) {
-			item.description = getTranslationByKey(item.description) || "";
-		}
-		item.boxes_chosen = "1";
-	});
+
+	// No playbook items for now
+	// data.playbook[playbook].playbookitem.forEach(item => {
+	// 	item.name = getTranslation(item.name);
+	// 	if (item.description) {
+	// 		item.description = getTranslationByKey(item.description) || "";
+	// 	}
+	// 	item.boxes_chosen = "1";
+	// });
 });
+
+console.log("ability map")
 const playbookAbilityMap = new Map([...Object.values(data.playbook).map(x => x.ability).reduce((m, v) => {
 	v.forEach(a => m.add(a));
 	return m;
 }, new Set())].map(x => {
 	return [x.name.toLowerCase(), x.description];
 }));
+
 const crewAbilityMap = new Map([...Object.values(data.crew).map(x => x.crewability).reduce((m, v) => {
 	v.forEach(a => m.add(a));
 	return m;
@@ -534,7 +549,7 @@ on("sheet:opened", () => {
 	/* Setup and upgrades */
 	getAttrs(["version"], v => {
 		const upgradeSheet = version => {
-				//const [major, minor] = version && version.split(".").map(x => parseInt(x));
+				const [major, minor] = version && version.split(".").map(x => parseInt(x));
 				console.log(`Found version ${version}.`);
 			},
 			initialiseSheet = () => {

@@ -1,6 +1,6 @@
 /* global data, getTranslationByKey, getAttrs, setAttrs, on, getSectionIDs, generateRowID, removeRepeatingRow */
 const sheetVersion = "1.0";
-const sheetName = "Blades in the Dark";
+const sheetName = "Omniblades in the Dark";
 const getTranslation = (key) => (getTranslationByKey(key) || "NO_TRANSLATION_FOUND");
 /* It's necessary to include the base data at the start of the file */
 /* Translate all the data */

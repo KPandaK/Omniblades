@@ -1,42 +1,12 @@
-# Blades in the Dark Character Sheet template
+# Omniblades in the Dark Character Sheet
 
-This is a template for creating a derivative of the character sheet for Blades in the Dark for use on Roll20. If you have any questions, feel free to contact me on Discord @deceptive.duality#6358.
-
-This is the main version of this template, still containing all the Blades-specific data such as items, playbooks, crews, and factions. If you want to start from a clean sheet for a fresh hack, it is probably best to start from the [clean version](https://github.com/joesinghaus/Blades-template/tree/clean-sheet) instead, and use this branch only for insight in how to structure your data. If you want to see an example of a complete sheet created from this template, have a look at the [A Nocturne](https://github.com/joesinghaus/Blades-template/tree/A-Nocturne) branch of this repository.
+This is the source code for the Omniblades in the Dark character sheets on Roll20. It is based on the excellent work by [joesinghaus](https://github.com/joesinghaus).
 
 ## Changelog
 
-### July 3, 2018
+### 0.1
 
-Switched from command line sass to node-sass. This makes installing the required dependencies a bit more intuitive.
-
-### June 2, 2018
-
-Apart from bugfixes, some changes made to the Blades sheet were backported to the templated version. Moreover, this template vas reset to internal version number 1.0, since a new sheet really should not start at 2.7. The following innovations of the Blades sheet were backported:
-
-* Friend/contact notes
-* Automatically filling ability description upon entering names
-* Character picture on chat rolls
-* Pre-calculated number of dice
-* Restyled repeating section controls to use symbols instead of text
-
-## Installing dependencies
-
-To work with this sheet template, you need to first install [Node.js](https://nodejs.org/en/download/).
-
-To install all of the Node packages required to compile and work with the
-sheets, open a command-prompt and run
-
-```bash
-npm install
-```
-
-This will install all the dependencies defined in `package.json`. If you would
-prefer to install dependencies manually, you can:
-
-```bash
-npm install pug node-sass jstransformer jstransformer-babel babel-preset-minify
-````
+Initial work to stand up prototype
 
 ## Compiling the sheet
 

@@ -4,7 +4,7 @@
     "jstransformer": "^1.0.0",
     "jstransformer-babel": "^2.1.0",
     "node-sass": "^4.14.1",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   },
   "license": "MIT",
   "repository": "Omniblades"
